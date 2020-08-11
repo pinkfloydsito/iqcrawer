@@ -7,11 +7,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 
 from dotenv import load_dotenv, find_dotenv
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("semana")
+args = parser.parse_args()
+SEMANA = int(args.semana)
+
 load_dotenv(find_dotenv())
 
 USERNAME = os.getenv("SIGAT_USER")
 PASSWORD = os.getenv("PASSWORD")
-SEMANA = os.getenv("SEMANA")
 FINCA = os.getenv("FINCA")
 
 
